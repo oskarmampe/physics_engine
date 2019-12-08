@@ -1,0 +1,10 @@
+﻿  SpherePhysicsEngine.cpp
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(75,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(132,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(133,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(160,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(161,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(168,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(169,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine.cpp(177,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SpherePhysicsEngine.vcxproj -> C:\Users\Oskar\Projects\C\SpherePhysicsEngine\Debug\SpherePhysicsEngine.exe
