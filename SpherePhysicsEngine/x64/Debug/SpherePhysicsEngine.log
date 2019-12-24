@@ -1,0 +1,32 @@
+﻿  SpherePhysicsEngine.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(132): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(133): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(160): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(161): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(168): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\spherephysicsengine.cpp(177): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutDestroyWindow referenced in function "void __cdecl menu(int)" (?menu@@YAXH@Z)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "void __cdecl menu(int)" (?menu@@YAXH@Z)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "void __cdecl display(void)" (?display@@YAXXZ)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutAddMenuEntry referenced in function "void __cdecl createMenu(void)" (?createMenu@@YAXXZ)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutAddSubMenu referenced in function "void __cdecl createMenu(void)" (?createMenu@@YAXXZ)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutAttachMenu referenced in function "void __cdecl createMenu(void)" (?createMenu@@YAXXZ)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "void __cdecl timer(int)" (?timer@@YAXH@Z)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutSpecialFunc referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutReshapeFunc referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutMouseFunc referenced in function main
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "void __cdecl init(void)" (?init@@YAXXZ)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutSolidSphere referenced in function "public: void __cdecl Sphere::reset(double,double,double)" (?reset@Sphere@@QEAAXNNN@Z)
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp___glutCreateMenuWithExit referenced in function glutCreateMenu_ATEXIT_HACK
+SpherePhysicsEngine.obj : error LNK2019: unresolved external symbol __imp_glutMouseWheelFunc referenced in function main
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\freeglut\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\x64\Debug\SpherePhysicsEngine.exe : fatal error LNK1120: 21 unresolved externals

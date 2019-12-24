@@ -1,63 +1,137 @@
 ﻿  algebra3.cpp
   arcball.cpp
   glui.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui.cpp(599): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui.cpp(602): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui.cpp(1922): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui.cpp(1925): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_add_controls.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_bitmaps.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_bitmap_img_data.cpp
   glui_button.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_checkbox.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_column.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_commandline.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_control.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_control.cpp(215): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_control.cpp(904): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
   glui_edittext.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_edittext.cpp(492): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_edittext.cpp(1142): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+..\glui_edittext.cpp(1163): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
   glui_filebrowser.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_list.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_list.cpp(105): warning C4244: '=': conversion from 'time_t' to 'unsigned long', possible loss of data
+..\glui_list.cpp(238): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+..\glui_list.cpp(275): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   glui_listbox.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_listbox.cpp(113): warning C4305: 'argument': truncation from 'double' to 'float'
   glui_mouse_iaction.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(161): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(164): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(166): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(168): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(197): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_mouse_iaction.cpp(198): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_node.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_panel.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_radio.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_radio.cpp(95): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   glui_rollout.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   Generating Code...
   Compiling...
   glui_rotation.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_rotation.cpp(120): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_rotation.cpp(136): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_rotation.cpp(143): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+..\glui_rotation.cpp(144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+..\glui_rotation.cpp(153): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+..\glui_rotation.cpp(154): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+..\glui_rotation.cpp(310): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_rotation.cpp(411): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   glui_scrollbar.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_scrollbar.cpp(368): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+..\glui_scrollbar.cpp(373): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+..\glui_scrollbar.cpp(397): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(398): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(399): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(400): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(614): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_scrollbar.cpp(776): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(815): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+..\glui_scrollbar.cpp(816): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   glui_separator.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_spinner.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_spinner.cpp(153): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+..\glui_spinner.cpp(155): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   glui_statictext.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_string.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_string.cpp(48): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1398): note: see declaration of '_vsnprintf'
   glui_textbox.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_textbox.cpp(432): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+..\glui_textbox.cpp(488): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+..\glui_textbox.cpp(963): warning C4018: '>': signed/unsigned mismatch
+..\glui_textbox.cpp(965): warning C4018: '>': signed/unsigned mismatch
+..\glui_textbox.cpp(967): warning C4018: '>': signed/unsigned mismatch
   glui_translation.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(200): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_translation.cpp(345): warning C4305: 'initializing': truncation from 'double' to 'float'
+..\glui_translation.cpp(352): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_translation.cpp(353): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_translation.cpp(372): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_translation.cpp(374): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+..\glui_translation.cpp(431): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(434): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+..\glui_translation.cpp(463): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(464): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(465): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(466): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(467): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_translation.cpp(468): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_tree.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   glui_treepanel.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+..\glui_treepanel.cpp(211): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(212): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(213): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(214): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(215): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(216): warning C4305: 'argument': truncation from 'double' to 'float'
+..\glui_treepanel.cpp(217): warning C4305: 'argument': truncation from 'double' to 'float'
   glui_window.cpp
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   quaternion.cpp
   Generating Code...
-C:\Users\Oskar\Projects\C\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL\glui.h(60,12): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1371,5): warning MSB8012: TargetPath(\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\msvc\.\Release\_glui library.lib) does not match the Library's OutputFile property value (\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\msvc\lib\glui32.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1373,5): warning MSB8012: TargetName(_glui library) does not match the Library's OutputFile property value (glui32). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  glui.vcxproj -> \\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\msvc\.\Release\_glui library.lib

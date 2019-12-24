@@ -1,0 +1,19 @@
+﻿  SpherePhysicsEngine.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\Camera.h(110): warning C4305: '-=': truncation from 'double' to 'float'
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\Sphere.h(41): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(48): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+SpherePhysicsEngine.cpp(84): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(126): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+SpherePhysicsEngine.cpp(149): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(177): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(178): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(185): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(186): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  1 of 357 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SpherePhysicsEngine.vcxproj -> \\ds.leeds.ac.uk\student\student19\sc19okm\SpherePhysicsEngine\SpherePhysicsEngine\Release\SpherePhysicsEngine.exe

@@ -5,12 +5,14 @@
 
 #include <Windows.h>
 
-#include <GL/freeglut.h>
+#include <GL/glui.h>
+#include <GL/glut.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/vec3.hpp>
 #include <cmath>
+#include <time.h>
 
 #include "Camera.h"
 #include "Plane.h"
@@ -19,13 +21,17 @@
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+int FPS = 60;
+int counter = 0;
+float sphere_y = 6;
+float sphere_x = 3;
+float sphere_z = 4;
+float resitution = 1;
 
 // Global variables: a camera, a plane and some balls.
 Plane ground_plane(8, 8);
 Sphere spheres[] = {
-  Sphere(1, GREEN, 7, 6, 1, 0.5),
-  Sphere(1.5, MAGENTA, 6, 3, 4, 0.5),
-  Sphere(0.4, WHITE, 5, 1, 7, 0.5)
+  Sphere(1.5, MAGENTA, sphere_y, sphere_x, sphere_z, resitution)
 };
 
 //Camera camera;
@@ -39,6 +45,8 @@ bool firstMouse = true;
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 
+int initial_time = time(NULL), final_time, frame_count = 0;
+
 bool paused = false;
 
 static int main_window;
@@ -46,6 +54,7 @@ static int sub_window;
 static int menu_id;
 static int submenu_id;
 static int value = 0;
+
 void menu(int num) {
 	if (num == 0) {
 		glutDestroyWindow(main_window);
@@ -103,9 +112,7 @@ void display() {
 	}
 	else if (value == 4)
 	{
-		spheres[0].reset(6, 7, 1);
-		spheres[1].reset(3, 6, 4);
-		spheres[2].reset(1, 5, 7);
+		spheres[0].reset(sphere_y, sphere_x, sphere_z, resitution);
 		value = 2;
 	}
 	for (int i = 0; i < sizeof spheres / sizeof(Sphere); i++) {
@@ -114,6 +121,16 @@ void display() {
 
 	glFlush();
 	glutSwapBuffers();
+
+	frame_count++;
+	final_time = time(NULL);
+
+	if (final_time - initial_time > 0)
+	{
+		std::cout << "FPS: " << frame_count / (final_time - initial_time) << std::endl;
+		frame_count = 0;
+		initial_time = final_time;
+	}
 }
 
 
@@ -122,7 +139,7 @@ void reshape(GLint w, GLint h) {
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(40.0, GLfloat(w) / GLfloat(h), 1.0, 150.0);
+	gluPerspective(ZOOM, GLfloat(w) / GLfloat(h), 1.0, 150.0);
 	glMatrixMode(GL_MODELVIEW);
 }
 
@@ -133,7 +150,7 @@ void timer(int v) {
 	deltaTime = (t - lastFrame) / 1000.0;
 	lastFrame = t;
 	glutPostRedisplay();
-	glutTimerFunc(1000 / 60, timer, v);
+	glutTimerFunc(1000 / FPS, timer, 0);
 }
 
 // Moves the camera according to the key pressed, then ask to refresh the
@@ -174,7 +191,7 @@ void mouse(int button, int state, int mousex, int mousey)
 	{
 		if (state == GLUT_UP) return;
 		std::cout << "SCROLL" << std::endl;
-		camera.ProcessMouseScroll(mousey);
+		camera.ProcessMouseScroll();
 		glutPostRedisplay();
 		
 	}
@@ -185,8 +202,15 @@ void mouseWheel(int button, int dir, int x, int y)
 {
 	std::cout << "SCROLL" << std::endl;
 	std::cout << y << std::endl;
-	camera.ProcessMouseScroll(10);
+	camera.ProcessMouseScroll();
 	glutPostRedisplay();
+}
+
+void on_click(int control)
+{
+	if (control == 0) {
+		spheres[0].reset(sphere_x, sphere_y, sphere_z, resitution);
+	}
 }
 
 // Initializes GLUT and enters the main loop.
@@ -198,13 +222,26 @@ int main(int argc, char** argv) {
 	glutInitWindowPosition(80, 80);
 	glutInitWindowSize(SCR_WIDTH, SCR_HEIGHT);
 	main_window = glutCreateWindow("Bouncing Balls");
+
+
 	createMenu();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutSpecialFunc(special);
-	glutTimerFunc(100, timer, 0);
 	glutMouseFunc(mouse);
 	glutMouseWheelFunc(mouseWheel);
+	
+	
+	GLUI *glui = GLUI_Master.create_glui("Help on GLUI Widgets", 0);
+	glui->set_main_gfx_window(main_window);
+	GLUI_EditText *x_edittext = new GLUI_EditText(glui, "X: ", &sphere_x);
+	GLUI_EditText *y_edittext = new GLUI_EditText(glui, "Y: ", &sphere_y);
+	GLUI_EditText *z_edittext = new GLUI_EditText(glui, "Z: ", &sphere_z);
+	GLUI_EditText *surface_edittext = new GLUI_EditText(glui, "Resitution: ", &resitution);
+	new GLUI_Button(glui, "Update Sphere", 0, on_click);
+	GLUI_EditText *fps_edittext = new GLUI_EditText(glui, "FPS: ", &FPS);
+	new GLUI_Button(glui, "Quit", 0, (GLUI_Update_CB)exit);
 	init();
+	glutTimerFunc(1000 / FPS, timer, 0);
 	glutMainLoop();
 }

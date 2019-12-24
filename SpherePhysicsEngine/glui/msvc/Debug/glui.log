@@ -1,0 +1,63 @@
+﻿  algebra3.cpp
+  arcball.cpp
+  glui.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_add_controls.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_bitmaps.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_bitmap_img_data.cpp
+  glui_button.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_checkbox.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_column.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_commandline.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_control.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_edittext.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_filebrowser.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_list.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_listbox.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_mouse_iaction.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_node.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_panel.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_radio.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_rollout.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  Generating Code...
+  Compiling...
+  glui_rotation.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_scrollbar.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_separator.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_spinner.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_statictext.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_string.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_textbox.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_translation.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_tree.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_treepanel.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  glui_window.cpp
+\\ds.leeds.ac.uk\student\student19\sc19okm\spherephysicsengine\spherephysicsengine\spherephysicsengine\glui\include\gl\glui.h(60): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  quaternion.cpp
+  Generating Code...
