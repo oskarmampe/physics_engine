@@ -1,19 +1,18 @@
 ﻿  SpherePhysicsEngine.cpp
 C:\Users\sc19okm\OneDrive - University of Leeds\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\sc19okm\onedrive - university of leeds\spherephysicsengine\spherephysicsengine\spherephysicsengine\Sphere.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\sc19okm\onedrive - university of leeds\spherephysicsengine\spherephysicsengine\spherephysicsengine\Sphere.h(43): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
 SpherePhysicsEngine.cpp(49): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-SpherePhysicsEngine.cpp(91): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(133): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-SpherePhysicsEngine.cpp(134): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-SpherePhysicsEngine.cpp(158): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-SpherePhysicsEngine.cpp(181): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(182): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(228): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(229): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(236): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(237): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(95): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(135): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+SpherePhysicsEngine.cpp(136): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+SpherePhysicsEngine.cpp(180): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(181): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(220): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(221): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(230): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(231): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating code
-  2 of 340 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+  4 of 339 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

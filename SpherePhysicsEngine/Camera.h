@@ -34,9 +34,9 @@ public:
 	double vertical;
 
 	// Basic constructor with position as vector.
-	Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f)) : speed(45.0f), zoom(10.0f)
+	Camera(glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f)) : speed(45.0f), zoom(10.0f)
 	{
-		position = position;
+		position = pos;
 	}
 
 	// Keyboard event listener, takes in a direction whatever it was represented in the GUI as, and the delta time between frames.

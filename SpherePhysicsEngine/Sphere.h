@@ -21,15 +21,16 @@ class Sphere {
 	glm::vec2 velocity = glm::vec2(0.0f, 0);
 	GLfloat direction;
 public:
+	// A basic constructor, taking in any properties of the sphere.
 	Sphere(double r, GLfloat* c, double h, double x, double z, double cr) :
 		radius(r), colour(c), maximumHeight(h), direction(-1.0f),
 		y(h), x(x), z(z), restitution(cr) {
 	}
+
+	// Update the sphere position.
 	void update(float delta_time, bool paused) {
-		/*std::cout << "Delta Time " << deltaTime << std::endl;
-		std::cout << "Y: " << y << std::endl;
-		std::cout << "VELOC Y: " << velocity.y << std::endl;
-		std::cout << "Direction: " << direction << std::endl;*/
+
+		// Check if paused, draw, otherwise dont.
 		if (!paused) {
 			if (y <= radius && direction == -1) {
 				if (velocity.y <= 0)
@@ -59,30 +60,16 @@ public:
 				{
 					velocity.y += gravity;
 					y += direction * velocity.y;
-					/*velocity.y += gravity * deltaTime * deltaTime;
-					y += direction * velocity.y * deltaTime;*/
+					/*velocity.y += gravity * delta_time * delta_time;
+					y += direction * velocity.y * delta_time;*/
 				}
 			}
-			//if (deltaTime > 0.02f)
-			//{
-			//	deltaTime = 0.02f;
-			//}
-			//glm::vec2 normal(0, 1);
-			//velocity.y += gravity * deltaTime * deltaTime;
-			//y += velocity.y;
-			//if (y > maximumHeight) {
-			//	y = maximumHeight - radius;
-			//}
-			//else if (y < radius) {
-			//	y = radius;
-			//	GLfloat d = -2;
-			//	velocity = d * (velocity.x * normal.x + velocity.y * normal.y) * normal + velocity;
-			//}
 		}
 
 		draw_sphere();
 	}
 
+	// Reset the sphere back to the specified properties.
 	void reset(double nx, double ny, double nz, float cr)
 	{
 		x = nx;
@@ -94,6 +81,7 @@ public:
 		draw_sphere();
 	}
 
+	// Draw the sphere through GLUT solid sphere.
 	void draw_sphere()
 	{
 		glPushMatrix();

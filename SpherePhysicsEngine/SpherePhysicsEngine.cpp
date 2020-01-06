@@ -36,7 +36,7 @@ Plane ground_plane(8, 8);
 Sphere spheres[] = {
   Sphere(1.5, MAGENTA, sphere_y, sphere_x, sphere_z, resitution)
 };
-Camera camera(glm::vec3(0.0f, 0.0f, 0.0f));
+Camera camera(glm::vec3(20.0f, 50.0f, 110.0f));
 
 // Required for event handling
 float last_x = SCR_WIDTH / 2.0f;
@@ -124,7 +124,9 @@ void display() {
 	// Assign the model matrix.
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
+	
+	std::cout << "POSITION: X;" <<  camera.position.x << " Y; " << camera.position.y << " Z; " << camera.position.z << std::endl;
+	
 	gluLookAt(camera.position.x, camera.position.y, camera.position.z,
 		ground_plane.x_midpoint(), 0.0, ground_plane.z_midpoint(),
 		0.0, 1.0, 0.0);
