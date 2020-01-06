@@ -3,11 +3,12 @@
 #include <GL/freeglut.h>
 
 #include <glm/vec2.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
-// A ball.  A ball has a radius, a color, and bounces up and down between
-// a maximum height and the xz plane.  Therefore its x and z coordinates
-// are fixed.  It uses a lame bouncing algorithm, simply moving up or
-// down by 0.05 units at each frame.
+// A Sphere. Has basic properties you'd expect; radius, colour, and position in space.
+// Has some additional material properties, such as restitution.
+// Lastly, this class contains some properties regarding physics, which, aruguably, should not be stored here i.e. gravity, velocity.
 class Sphere {
 	double radius;
 	GLfloat* color;
@@ -16,7 +17,7 @@ class Sphere {
 	double y;
 	double z;
 	double restitution;
-	GLfloat gravity = 0.98f/1000.0f;
+	GLfloat gravity = 0.98f / 1000.0f;
 	glm::vec2 velocity = glm::vec2(0.0f, 0);
 	GLfloat direction;
 public:
@@ -24,7 +25,7 @@ public:
 		radius(r), color(c), maximumHeight(h), direction(-1.0f),
 		y(h), x(x), z(z), restitution(cr) {
 	}
-	void update(float deltaTime, bool paused) {
+	void update(float delta_time, bool paused) {
 		/*std::cout << "Delta Time " << deltaTime << std::endl;
 		std::cout << "Y: " << y << std::endl;
 		std::cout << "VELOC Y: " << velocity.y << std::endl;
@@ -48,7 +49,7 @@ public:
 				if (direction == 1)
 				{
 					velocity.y -= gravity;
-					y += direction * velocity.y ;
+					y += direction * velocity.y;
 					if (velocity.y <= 0)
 					{
 						direction = -1;
@@ -79,11 +80,7 @@ public:
 			//}
 		}
 
-		glPushMatrix();
-		glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
-		glTranslated(x, y, z);
-		glutSolidSphere(radius, 30, 30);
-		glPopMatrix();
+		draw_sphere();
 	}
 
 	void reset(double nx, double ny, double nz, float cr)
@@ -93,6 +90,12 @@ public:
 		z = nz;
 		restitution = cr;
 		maximumHeight = ny;
+
+		draw_sphere();
+	}
+
+	void draw_sphere()
+	{
 		glPushMatrix();
 		glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 		glTranslated(x, y, z);
