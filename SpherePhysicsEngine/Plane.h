@@ -1,44 +1,68 @@
 #pragma once
-// A plane class.  A plane has alternating red and white
-// squares.  The number of squares is set in the constructor.  Each square
-// is 1 x 1.  One corner of the board is (0, 0) and the board stretches out
-// along positive x and positive z.  It rests on the xz plane.  I put a
-// spotlight at (4, 3, 7).
+/**
+  *
+  * A class representing a plane that has a corner at (0,0) stretching out along positive x,z axis, meaning that it rests on these axes.
+  * A light is also added to illuminate the scene, making it easier to see motion.
+  *
+**/
 
-// Colors
-GLfloat WHITE[] = { 1, 1, 1 };
-GLfloat RED[] = { 1, 0, 0 };
-GLfloat GREEN[] = { 0, 1, 0 };
-GLfloat MAGENTA[] = { 1, 0, 1 };
+GLfloat BLUE[] = { 0, 0, 1 };
 
 class Plane {
-	int displayListId;
+	// Plane properties.
+	int id;
 	int width;
 	int depth;
+
 public:
+	// Simple setter constructor.
 	Plane(int width, int depth) : width(width), depth(depth) {}
-	double centerx() { return width / 2; }
-	double centerz() { return depth / 2; }
+
+	// Functinos to get centers.
+	double x_midpoint() 
+	{ 
+		return width / 2; 
+	}
+
+	double z_midpoint() 
+	{
+		return depth / 2; 
+	}
+
+	// Create the actual plane and display it.
 	void create() {
-		displayListId = glGenLists(1);
-		glNewList(displayListId, GL_COMPILE);
-		GLfloat lightPosition[] = { 4, 3, 7, 1 };
-		glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+
+		// Creating OPENGL Id
+		id = glGenLists(1);
+		glNewList(id, GL_COMPILE);
+		
+		// Creating light.
+		GLfloat light[] = { 4, 3, 7, 1 };
+		glLightfv(GL_LIGHT0, GL_POSITION, light);
+
+		// Begin creating the plane, which is a square/quad.
 		glBegin(GL_QUADS);
+
+		// Surface Normal
 		glNormal3d(0, 1, 0);
-		for (int x = 0; x < width - 1; x++) {
-			for (int z = 0; z < depth - 1; z++) {
-				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, RED);
-				glVertex3d(x, 0, z);
-				glVertex3d(x + 1, 0, z);
-				glVertex3d(x + 1, 0, z + 1);
-				glVertex3d(x, 0, z + 1);
+
+		// Create all the required vertices.
+		for (int i = 0; i < width - 1; ++i) {
+			for (int j = 0; j < depth - 1; ++j) {
+				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, BLUE);
+				glVertex3d(i, 0, j);
+				glVertex3d(i + 1, 0, j);
+				glVertex3d(i + 1, 0, j + 1);
+				glVertex3d(i, 0, j + 1);
 			}
 		}
 		glEnd();
 		glEndList();
 	}
-	void draw() {
-		glCallList(displayListId);
+
+	// OpenGL method to draw the plane.
+	void draw() 
+	{
+		glCallList(id);
 	}
 };

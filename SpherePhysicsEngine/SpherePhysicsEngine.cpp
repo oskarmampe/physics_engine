@@ -27,6 +27,10 @@ float sphere_x = 3;
 float sphere_z = 4;
 float resitution = 1;
 
+// Colors
+GLfloat MAGENTA[] = { 1, 0, 1 };
+GLfloat WHITE[] = { 1, 1, 1 };
+
 // Creating the scene.
 Plane ground_plane(8, 8);
 Sphere spheres[] = {
@@ -54,11 +58,15 @@ static int submenu_id;
 static int value = 0;
 
 // An event handler for the menu. Takes a menu entry id, and then executes the correct corresponding action to its id.
-void menu(int num) {
-	if (num == 0) {
+void menu(int num) 
+{
+	// If the pressed ID menu matches that of 0, then quit the application.
+	if (num == 0) 
+	{
 		glutDestroyWindow(main_window);
 		exit(0);
 	}
+	// Otherwise assign the value to be reused for other functions.
 	else {
 		value = num;
 	}
@@ -102,78 +110,71 @@ void init() {
 
 // A function that handles displaying the next frame.
 void display() {
+	// Clear the colour buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	// Assign the viewport.
 	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
 	glMatrixMode(GL_PROJECTION);
 
+	// Assign the projection matrix.
 	glLoadIdentity();
-	gluPerspective(camera.Zoom, GLfloat(SCR_WIDTH) / GLfloat(SCR_HEIGHT), 1.0, 150.0);
+	gluPerspective(camera.zoom, GLfloat(SCR_WIDTH) / GLfloat(SCR_HEIGHT), 1.0, 150.0);
 
+	// Assign the model matrix.
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	/*
-	std::cout << "POSITION: X;" <<  camera.Position.x << " Y; " << camera.Position.y << " Z; " << camera.Position.z << std::endl;
-	std::cout << "FRONT: X; " << camera.Front.x << " Y; " << camera.Front.y << " Z; " << camera.Front.z << std::endl;
-	std::cout << "UP: X; " << camera.Up.x << " Y; " << camera.Up.y << " Z; " << camera.Up.z << std::endl;
-	*/
-	//gluLookAt(camera.Position.x, camera.Position.y, camera.Position.z,
-	//	camera.Front.x + camera.Position.x, camera.Front.y  + camera.Position.y, camera.Front.z + camera.Front.z,
-	//	camera.Up.x, camera.Up.y, camera.Up.z);
-
-	gluLookAt(camera.Position.x, camera.Position.y, camera.Position.z,
-		ground_plane.centerx(), 0.0, ground_plane.centerz(),
+	gluLookAt(camera.position.x, camera.position.y, camera.position.z,
+		ground_plane.x_midpoint(), 0.0, ground_plane.z_midpoint(),
 		0.0, 1.0, 0.0);
 
-	glRotatef(camera.vert_angle, 1, 0, 0);
-	glRotatef(camera.horiz_angle, 0, 1, 0);
+	// Rotate the scene if needed
+	glRotatef(camera.vertical, 1, 0, 0);
+	glRotatef(camera.horizontal, 0, 1, 0);
 
+	// Draw the plane.
 	ground_plane.draw();
-	if (value == 2)
+
+	//Check for value changed through GLUT menu.
+	if (value == 2) // RESUME
 	{
 		paused = false;
 	}
-	else if (value == 3)
+	else if (value == 3) // PAUSE
 	{
 		paused = true;
 	}
-	else if (value == 4)
+	else if (value == 4) // RESTART
 	{
 		spheres[0].reset(sphere_y, sphere_x, sphere_z, resitution);
 		value = 2;
 	}
+
+	// Draw spheres if there are more than one.
 	for (int i = 0; i < sizeof spheres / sizeof(Sphere); i++) {
 		spheres[i].update(delta_time, paused);
 	}
 
+	// Flush the buffers.
 	glFlush();
 	glutSwapBuffers();
 
-	frame_count++;
-	final_time = time(NULL);
+	// Calculate FPS 
+	//frame_count++;
+	//final_time = time(NULL);
 
-	if (final_time - initial_time > 0)
-	{
-		std::cout << "FPS: " << frame_count / (final_time - initial_time) << std::endl;
-		frame_count = 0;
-		initial_time = final_time;
-	}
-}
-
-
-// Reshape functions that constructs a camera with the correct orientation.
-void reshape(GLint w, GLint h) {
-	//glViewport(0, 0, w, h);
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-	//gluPerspective(camera.Zoom, GLfloat(w) / GLfloat(h), 1.0, 150.0);
-	//glMatrixMode(GL_MODELVIEW);
+	//if (final_time - initial_time > 0)
+	//{
+	//	std::cout << "FPS: " << frame_count / (final_time - initial_time) << std::endl;
+	//	frame_count = 0;
+	//	initial_time = final_time;
+	//}
 }
 
 // Requests to draw the next frame.
 void timer(int v) {
-	/* Delta time in seconds. */
+	// Delta time in seconds.
 	float t = glutGet(GLUT_ELAPSED_TIME);
 	delta_time = (t - last_frame) / 1000.0;
 	last_frame = t;
@@ -186,10 +187,10 @@ void timer(int v) {
 // The only function available in this application is the ability to move the camera around.
 void keyboard(int key, int, int) {
 	switch (key) {
-		case GLUT_KEY_LEFT: camera.ProcessKeyboard(LEFT, delta_time); break;
-		case GLUT_KEY_RIGHT: camera.ProcessKeyboard(RIGHT, delta_time); break;
-		case GLUT_KEY_UP: camera.ProcessKeyboard(FORWARD, delta_time); break;
-		case GLUT_KEY_DOWN: camera.ProcessKeyboard(BACKWARD, delta_time); break;
+		case GLUT_KEY_LEFT: camera.keyboard(LEFT, delta_time); break;
+		case GLUT_KEY_RIGHT: camera.keyboard(RIGHT, delta_time); break;
+		case GLUT_KEY_UP: camera.keyboard(UP, delta_time); break;
+		case GLUT_KEY_DOWN: camera.keyboard(DOWN, delta_time); break;
 	}
 
 	glutPostRedisplay();
@@ -197,28 +198,21 @@ void keyboard(int key, int, int) {
 
 
 // A function that handles any mouse key press
-void mouse(int button, int state, int mousex, int mousey)
+void mouse(int button, int state, int mouse_x, int mouse_y)
 {
-	std::cout << button << std::endl;
+	// A simple check if the button is pressed for the first time. This is to prevent from awkward camera movement.
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_UP)
 	{
 		first_mouse = true;
 	}
-	//if ((button == 3) || (button == 4))
-	//{
-	//	if (state == GLUT_UP) return;
-	//	std::cout << "SCROLL" << std::endl;
-	//	camera.ProcessMouseScroll();
-	//	glutPostRedisplay();
-	//
-	//}
+
 	glutPostRedisplay();
 }
 
-
+// Function that handles continous mouse movement, if a mouse button is held. 
 void mouse_motion(int mousex, int mousey)
 {
-	std::cout << "LEFT MOUSE" << std::endl;
+	// If first mouse, then reset and forget any value that was there before.
 	if (first_mouse)
 	{
 		last_x = mousex;
@@ -226,35 +220,23 @@ void mouse_motion(int mousex, int mousey)
 		first_mouse = false;
 	}
 
+	// Calculate the offset i.e. how far it has moved.
 	float xoffset = mousex - last_x;
-	float yoffset = mousey - last_y; // reversed since y-coordinates go from bottom to top
+	float yoffset = mousey - last_y; 
 
+	// Update the last mouse movement.
 	last_x = mousex;
 	last_y = mousey;
 
-	std::cout << "X OFFSET: " << xoffset << std::endl;
-	std::cout << "Y OFFSET: " << yoffset << std::endl;
-
-	camera.ProcessMouseMovement(xoffset, yoffset);
-
-	//if ((button == 3) || (button == 4))
-	//{
-	//	if (state == GLUT_UP) return;
-	//	std::cout << "SCROLL" << std::endl;
-	//	camera.ProcessMouseScroll();
-	//	glutPostRedisplay();
-	//	
-	//}
+	// Move the camera and redisplay
+	camera.mouse(xoffset, yoffset);
 	glutPostRedisplay();
 }
 
 // A function that handles wheel motion.
 void mouseWheel(int button, int dir, int x, int y)
 {
-	std::cout << "SCROLL" << std::endl;
-	std::cout << y << std::endl;
-	std::cout << "DIRECTION: " << dir << std::endl;
-	camera.ProcessMouseScroll(dir);
+	camera.mouse_scroll(dir);
 	glutPostRedisplay();
 }
 
@@ -279,7 +261,6 @@ int main(int argc, char** argv) {
 
 	// Attaching GLUT functions.
 	glutDisplayFunc(display);
-	glutReshapeFunc(reshape);
 	glutSpecialFunc(keyboard);
 	glutMouseFunc(mouse);
 	glutMotionFunc(mouse_motion);

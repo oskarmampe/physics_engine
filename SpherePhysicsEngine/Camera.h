@@ -1,5 +1,10 @@
 #pragma once
 
+/**
+  *
+  * A simple camera class that has a position, zoom level, movement speed and the quantity to rotate around horizontal/vertical axis.
+  *
+**/
 #ifndef CAMERA_H
 #define CAMERA_H
 #include <glm/glm.hpp>
@@ -7,77 +12,79 @@
 #include <iostream>
 #include <vector>
 
-// Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
+// An enum used for specifying a camera movement. This is abstracted away, so that it works independently of GUI library.
 enum Camera_Movement {
-	FORWARD,
-	BACKWARD,
 	LEFT,
-	RIGHT
+	RIGHT,
+	UP,
+	DOWN
 };
 
-// Default camera values
-const float SPEED = 10.0f;
-const float ZOOM = 45.0f;
 
-
-// An abstract camera class that processes input and calculates the corresponding Euler Angles, Vectors and Matrices for use in OpenGL
 class Camera
 {
 public:
 	// Camera Attributes
-	glm::vec3 Position;
+	glm::vec3 position;
+
 	// Camera options
-	float MovementSpeed;
-	float MouseSensitivity;
-	float Zoom;
-	double horiz_angle;
-	double vert_angle;
+	float speed;
+	float zoom;
+	double horizontal;
+	double vertical;
 
-	// Constructor with vectors
-	Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f)) : MovementSpeed(SPEED), Zoom(ZOOM)
+	// Basic constructor with position as vector.
+	Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f)) : speed(45.0f), zoom(10.0f)
 	{
-		Position = position;
+		position = position;
 	}
 
-	// Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
-	void ProcessKeyboard(Camera_Movement direction, float deltaTime)
+	// Keyboard event listener, takes in a direction whatever it was represented in the GUI as, and the delta time between frames.
+	void keyboard(Camera_Movement direction, float deltaTime)
 	{
-		std::cout << deltaTime << std::endl;
-		float velocity = MovementSpeed * deltaTime;
-		if (direction == FORWARD)
-			Position.y += velocity;
-		if (direction == BACKWARD)
-			Position.y -= velocity;
+		// A simple calculation of velocity. Could be improved upon.
+		float velocity = speed * deltaTime;
+		if (direction == UP)
+			position.z += velocity;
+		if (direction == DOWN)
+			position.z -= velocity;
 		if (direction == LEFT)
-			Position.x -= velocity;
+			position.x -= velocity;
 		if (direction == RIGHT)
-			Position.x += velocity;
+			position.x += velocity;
 	}
 
-	// Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-	void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
+	// Mouse click event listener, takes in the offset between each 'press'.
+	void mouse(float xoffset, float yoffset)
 	{
-		horiz_angle += xoffset * 0.5; /* assuming deltas are in pixels */
-		vert_angle += yoffset * 0.5;
-		if (vert_angle > 90) vert_angle = 90;
-		if (vert_angle < -90) vert_angle = -90;
+		// Theta's to rotate around.
+		horizontal += xoffset * 0.5;
+		vertical += yoffset * 0.5;
+
+		// Constraint the rotation.
+		if (vertical > 90) 
+			vertical = 90;
+		if (vertical < -90) 
+			vertical = -90;
 	}
 
-	// Processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
-	void ProcessMouseScroll(int dir)
+	// Mouse scroll event, taking in the direction of the mouse scroll. If it's negatigve then zoom in, otherwise zoom out.
+	void mouse_scroll(int dir)
 	{
-		if (Zoom >= 1.0f && Zoom <= 45.0f)
+		if (zoom >= 1.0f && zoom <= 45.0f)
 		{
 			if (dir == -1)
-				Zoom += 0.25;
+				zoom += 0.25;
 			if (dir == 1)
-				Zoom -= 0.25;
+				zoom -= 0.25;
 		}
 
-		if (Zoom <= 1.0f)
-			Zoom = 1.0f;
-		if (Zoom >= 45.0f)
-			Zoom = 45.0f;
+		if (zoom <= 1.0f)
+			zoom = 1.0f;
+
+		if (zoom >= 45.0f)
+			zoom = 45.0f;
+			
 	}
 };
 #endif

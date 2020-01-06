@@ -11,7 +11,7 @@
 // Lastly, this class contains some properties regarding physics, which, aruguably, should not be stored here i.e. gravity, velocity.
 class Sphere {
 	double radius;
-	GLfloat* color;
+	GLfloat* colour;
 	double maximumHeight;
 	double x;
 	double y;
@@ -22,7 +22,7 @@ class Sphere {
 	GLfloat direction;
 public:
 	Sphere(double r, GLfloat* c, double h, double x, double z, double cr) :
-		radius(r), color(c), maximumHeight(h), direction(-1.0f),
+		radius(r), colour(c), maximumHeight(h), direction(-1.0f),
 		y(h), x(x), z(z), restitution(cr) {
 	}
 	void update(float delta_time, bool paused) {
@@ -97,7 +97,7 @@ public:
 	void draw_sphere()
 	{
 		glPushMatrix();
-		glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
+		glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, colour);
 		glTranslated(x, y, z);
 		glutSolidSphere(radius, 30, 30);
 		glPopMatrix();

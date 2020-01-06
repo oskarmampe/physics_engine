@@ -1,21 +1,21 @@
 ﻿  SpherePhysicsEngine.cpp
 C:\Users\sc19okm\OneDrive - University of Leeds\SpherePhysicsEngine\SpherePhysicsEngine\SpherePhysicsEngine\glui\include\GL/glui.h(868): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\sc19okm\onedrive - university of leeds\spherephysicsengine\spherephysicsengine\spherephysicsengine\Sphere.h(42): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(45): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-SpherePhysicsEngine.cpp(87): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(129): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-SpherePhysicsEngine.cpp(130): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-SpherePhysicsEngine.cpp(154): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-SpherePhysicsEngine.cpp(177): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(178): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(224): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(225): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(232): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-SpherePhysicsEngine.cpp(233): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(49): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+SpherePhysicsEngine.cpp(91): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(133): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+SpherePhysicsEngine.cpp(134): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+SpherePhysicsEngine.cpp(158): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+SpherePhysicsEngine.cpp(181): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(182): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(228): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(229): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(236): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+SpherePhysicsEngine.cpp(237): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating code
-  13 of 340 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+  2 of 340 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glui32.lib(glui.obj) : warning LNK4099: PDB '_glui library.pdb' was not found with 'glui32.lib(glui.obj)' or at 'C:\Users\sc19okm\OneDrive - University of Leeds\SpherePhysicsEngine\SpherePhysicsEngine\Release\_glui library.pdb'; linking object as if no debug info
 glui32.lib(glui_bitmaps.obj) : warning LNK4099: PDB '_glui library.pdb' was not found with 'glui32.lib(glui_bitmaps.obj)' or at 'C:\Users\sc19okm\OneDrive - University of Leeds\SpherePhysicsEngine\SpherePhysicsEngine\Release\_glui library.pdb'; linking object as if no debug info
