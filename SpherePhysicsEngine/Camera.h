@@ -13,7 +13,7 @@
 #include <vector>
 
 // An enum used for specifying a camera movement. This is abstracted away, so that it works independently of GUI library.
-enum Camera_Movement {
+enum CAMERA_MOVEMENT {
 	LEFT,
 	RIGHT,
 	UP,
@@ -34,24 +34,23 @@ public:
 	double vertical;
 
 	// Basic constructor with position as vector.
-	Camera(glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f)) : speed(45.0f), zoom(10.0f)
+	Camera(glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f)) : speed(5.0f), zoom(10.0f)
 	{
 		position = pos;
 	}
 
 	// Keyboard event listener, takes in a direction whatever it was represented in the GUI as, and the delta time between frames.
-	void keyboard(Camera_Movement direction, float deltaTime)
+	void keyboard(CAMERA_MOVEMENT direction, float delta_time)
 	{
 		// A simple calculation of velocity. Could be improved upon.
-		float velocity = speed * deltaTime;
 		if (direction == UP)
-			position.z += velocity;
+			position.z += speed;
 		if (direction == DOWN)
-			position.z -= velocity;
+			position.z -= speed;
 		if (direction == LEFT)
-			position.x -= velocity;
+			position.x -= speed;
 		if (direction == RIGHT)
-			position.x += velocity;
+			position.x += speed;
 	}
 
 	// Mouse click event listener, takes in the offset between each 'press'.

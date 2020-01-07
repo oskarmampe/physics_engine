@@ -18,23 +18,23 @@
 // Application settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-int FPS = 60;
+float FPS = 60;
 int counter = 0;
 
 // Sphere Settings
-float sphere_y = 6;
 float sphere_x = 3;
+float sphere_y = 6;
 float sphere_z = 4;
-float resitution = 1;
+float restitution = 0.7;
 
 // Colors
-GLfloat MAGENTA[] = { 1, 0, 1 };
+GLfloat RED[] = { 1, 0, 0 };
 GLfloat WHITE[] = { 1, 1, 1 };
 
 // Creating the scene.
 Plane ground_plane(8, 8);
 Sphere spheres[] = {
-  Sphere(1.5, MAGENTA, sphere_y, sphere_x, sphere_z, resitution)
+  Sphere(1.5, RED, sphere_x, sphere_y, sphere_z, restitution)
 };
 Camera camera(glm::vec3(20.0f, 50.0f, 110.0f));
 
@@ -56,6 +56,9 @@ static int sub_window;
 static int menu_id;
 static int submenu_id;
 static int value = 0;
+
+// GLUI Object
+GLUI *glui;
 
 // An event handler for the menu. Takes a menu entry id, and then executes the correct corresponding action to its id.
 void menu(int num) 
@@ -92,7 +95,7 @@ void create_menu(void) {
 // Initial settings to be applied to the application.
 void init() {
 	// Get the initial delta time.
-	delta_time = glutGet(GLUT_ELAPSED_TIME);
+	delta_time = 0;
 
 	// Settings for basic lightning.
 	glEnable(GL_DEPTH_TEST);
@@ -125,8 +128,6 @@ void display() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
-	std::cout << "POSITION: X;" <<  camera.position.x << " Y; " << camera.position.y << " Z; " << camera.position.z << std::endl;
-	
 	gluLookAt(camera.position.x, camera.position.y, camera.position.z,
 		ground_plane.x_midpoint(), 0.0, ground_plane.z_midpoint(),
 		0.0, 1.0, 0.0);
@@ -149,8 +150,15 @@ void display() {
 	}
 	else if (value == 4) // RESTART
 	{
-		spheres[0].reset(sphere_y, sphere_x, sphere_z, resitution);
-		value = 2;
+		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution);
+		if (!paused)
+			value = 2;
+		else
+			value = 3;
+	}
+	else if (value == 1)
+	{
+		glui->show();
 	}
 
 	// Draw spheres if there are more than one.
@@ -161,24 +169,13 @@ void display() {
 	// Flush the buffers.
 	glFlush();
 	glutSwapBuffers();
-
-	// Calculate FPS 
-	//frame_count++;
-	//final_time = time(NULL);
-
-	//if (final_time - initial_time > 0)
-	//{
-	//	std::cout << "FPS: " << frame_count / (final_time - initial_time) << std::endl;
-	//	frame_count = 0;
-	//	initial_time = final_time;
-	//}
 }
 
 // Requests to draw the next frame.
 void timer(int v) {
 	// Delta time in seconds.
 	float t = glutGet(GLUT_ELAPSED_TIME);
-	delta_time = (t - last_frame) / 1000.0;
+	delta_time = t - last_frame;
 	last_frame = t;
 	glutPostRedisplay();
 	glutTimerFunc(1000 / FPS, timer, 0);
@@ -194,8 +191,6 @@ void keyboard(int key, int, int) {
 		case GLUT_KEY_UP: camera.keyboard(UP, delta_time); break;
 		case GLUT_KEY_DOWN: camera.keyboard(DOWN, delta_time); break;
 	}
-
-	glutPostRedisplay();
 }
 
 
@@ -207,8 +202,6 @@ void mouse(int button, int state, int mouse_x, int mouse_y)
 	{
 		first_mouse = true;
 	}
-
-	glutPostRedisplay();
 }
 
 // Function that handles continous mouse movement, if a mouse button is held. 
@@ -232,21 +225,29 @@ void mouse_motion(int mousex, int mousey)
 
 	// Move the camera and redisplay
 	camera.mouse(xoffset, yoffset);
-	glutPostRedisplay();
 }
 
 // A function that handles wheel motion.
-void mouseWheel(int button, int dir, int x, int y)
+void mouse_wheel(int button, int dir, int x, int y)
 {
 	camera.mouse_scroll(dir);
 	glutPostRedisplay();
 }
 
 // A function that handles GLUI mouse click.
-void gluiClick(int control)
+void glui_click(int control)
 {
-	if (control == 0) {
-		spheres[0].reset(sphere_x, sphere_y, sphere_z, resitution);
+	if (control == 0) // UPDATE SPHERE
+	{
+		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution);
+	}
+	if (control == 1) // QUIT
+	{
+		glui->hide(); // hide the glui
+		if (!paused) // change value so it doesn't continually unhide
+			value = 2;
+		else
+			value = 3;
 	}
 }
 
@@ -266,18 +267,20 @@ int main(int argc, char** argv) {
 	glutSpecialFunc(keyboard);
 	glutMouseFunc(mouse);
 	glutMotionFunc(mouse_motion);
-	glutMouseWheelFunc(mouseWheel);
+	glutMouseWheelFunc(mouse_wheel);
 	
 	// Creating a GLUI window to allow reposition etc.
-	GLUI *glui = GLUI_Master.create_glui("Help on GLUI Widgets", 0);
+	glui = GLUI_Master.create_glui("Sphere Settings", 0);
 	glui->set_main_gfx_window(main_window);
 	GLUI_EditText *x_edittext = new GLUI_EditText(glui, "X: ", &sphere_x);
 	GLUI_EditText *y_edittext = new GLUI_EditText(glui, "Y: ", &sphere_y);
 	GLUI_EditText *z_edittext = new GLUI_EditText(glui, "Z: ", &sphere_z);
-	GLUI_EditText *surface_edittext = new GLUI_EditText(glui, "Resitution: ", &resitution);
-	new GLUI_Button(glui, "Update Sphere", 0, gluiClick);
+	GLUI_EditText *surface_edittext = new GLUI_EditText(glui, "Resitution: ", &restitution);
+	new GLUI_Button(glui, "Update Sphere", 0, glui_click);
 	GLUI_EditText *fps_edittext = new GLUI_EditText(glui, "FPS: ", &FPS);
-	new GLUI_Button(glui, "Quit", 0, (GLUI_Update_CB)exit);
+	new GLUI_Button(glui, "Quit", 1, glui_click);
+
+	glui->hide();
 
 	// Initialise with default settings.
 	init();

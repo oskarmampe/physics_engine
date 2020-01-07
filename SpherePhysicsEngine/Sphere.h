@@ -12,56 +12,56 @@
 class Sphere {
 	double radius;
 	GLfloat* colour;
-	double maximumHeight;
+	double max_height;
 	double x;
 	double y;
 	double z;
 	double restitution;
-	GLfloat gravity = 0.98f / 1000.0f;
-	glm::vec2 velocity = glm::vec2(0.0f, 0);
-	GLfloat direction;
+	GLfloat gravity = 0.98f / 10.0f;
+	glm::vec2 velocity = glm::vec2(0.0f, 0.0f);
+	int direction;
 public:
 	// A basic constructor, taking in any properties of the sphere.
-	Sphere(double r, GLfloat* c, double h, double x, double z, double cr) :
-		radius(r), colour(c), maximumHeight(h), direction(-1.0f),
-		y(h), x(x), z(z), restitution(cr) {
-	}
+	Sphere(double r, GLfloat* c, double nx, double ny, double nz, double cr) :
+		radius(r), colour(c), x(nx), y(ny), z(nz), restitution(cr), direction(-1), max_height(ny) {}
 
 	// Update the sphere position.
 	void update(float delta_time, bool paused) {
 
+		// Divide delta time to make time pass slower.
+		delta_time /= 1000.0f;
+
 		// Check if paused, draw, otherwise dont.
 		if (!paused) {
+			// BASIC COLISION DETECTION
 			if (y <= radius && direction == -1) {
-				if (velocity.y <= 0)
+				if (velocity.y <= 0) // REVERSE DIRECTION
 				{
 					y = radius;
 					direction = 0;
 				}
-				else
+				else // APPLY RESTITUTION AND CHANGE DIRECTION
 				{
 					velocity.y *= restitution;
 					direction = 1;
 					y = radius;
 				}
 			}
-			else
+			else // If no colision, apply acceleration
 			{
-				if (direction == 1)
+				if (direction == 1) // if direction is upward
 				{
-					velocity.y -= gravity;
-					y += direction * velocity.y;
+					velocity.y -= gravity * delta_time; // GET SLOWER
+					y += velocity.y;
 					if (velocity.y <= 0)
 					{
 						direction = -1;
 					}
 				}
-				else if (direction == -1)
+				else if (direction == -1) // if direction is downward
 				{
-					velocity.y += gravity;
-					y += direction * velocity.y;
-					/*velocity.y += gravity * delta_time * delta_time;
-					y += direction * velocity.y * delta_time;*/
+					velocity.y += gravity * delta_time; // GET FASTER
+					y -= velocity.y;
 				}
 			}
 		}
@@ -76,7 +76,8 @@ public:
 		y = ny;
 		z = nz;
 		restitution = cr;
-		maximumHeight = ny;
+		max_height = ny;
+		direction = -1;
 
 		draw_sphere();
 	}
