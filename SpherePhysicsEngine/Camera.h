@@ -40,17 +40,17 @@ public:
 	}
 
 	// Keyboard event listener, takes in a direction whatever it was represented in the GUI as, and the delta time between frames.
-	void keyboard(CAMERA_MOVEMENT direction, float delta_time)
+	void keyboard(CAMERA_MOVEMENT direction)
 	{
 		// A simple calculation of velocity. Could be improved upon.
 		if (direction == UP)
-			position.z += speed;
+			position.y += speed;
 		if (direction == DOWN)
-			position.z -= speed;
+			position.y -= speed;
 		if (direction == LEFT)
-			position.x -= speed;
+			position.z += speed;
 		if (direction == RIGHT)
-			position.x += speed;
+			position.z -= speed;
 	}
 
 	// Mouse click event listener, takes in the offset between each 'press'.

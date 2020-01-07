@@ -27,6 +27,12 @@ float sphere_y = 6;
 float sphere_z = 4;
 float restitution = 0.7;
 
+// Sphere physics settings
+float gravity = 0.98f / 1.0f;
+float air_density = 5.45;
+float drag_coeff = 0.024;
+float velocity = 0;
+
 // Colors
 GLfloat RED[] = { 1, 0, 0 };
 GLfloat WHITE[] = { 1, 1, 1 };
@@ -34,7 +40,7 @@ GLfloat WHITE[] = { 1, 1, 1 };
 // Creating the scene.
 Plane ground_plane(8, 8);
 Sphere spheres[] = {
-  Sphere(1.5, RED, sphere_x, sphere_y, sphere_z, restitution)
+  Sphere(1.5, RED, sphere_x, sphere_y, sphere_z, restitution, velocity, &gravity, &air_density, &drag_coeff)
 };
 Camera camera(glm::vec3(20.0f, 50.0f, 110.0f));
 
@@ -44,8 +50,8 @@ float last_y = SCR_HEIGHT / 2.0f;
 bool first_mouse = true;
 
 // Required for timing
-float delta_time = 0.0f;	// time between current frame and last frame
-float last_frame = 0.0f;
+int delta_time = 0;	// time between current frame and last frame
+int last_frame = 0;
 int initial_time = time(NULL), final_time, frame_count = 0;
 
 bool paused = false;
@@ -73,7 +79,6 @@ void menu(int num)
 	else {
 		value = num;
 	}
-	glutPostRedisplay();
 }
 
 // Create a glut menu for basic operations.
@@ -150,7 +155,7 @@ void display() {
 	}
 	else if (value == 4) // RESTART
 	{
-		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution);
+		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution, velocity);
 		if (!paused)
 			value = 2;
 		else
@@ -174,9 +179,10 @@ void display() {
 // Requests to draw the next frame.
 void timer(int v) {
 	// Delta time in seconds.
-	float t = glutGet(GLUT_ELAPSED_TIME);
+	int t = glutGet(GLUT_ELAPSED_TIME);
 	delta_time = t - last_frame;
 	last_frame = t;
+
 	glutPostRedisplay();
 	glutTimerFunc(1000 / FPS, timer, 0);
 }
@@ -186,10 +192,10 @@ void timer(int v) {
 // The only function available in this application is the ability to move the camera around.
 void keyboard(int key, int, int) {
 	switch (key) {
-		case GLUT_KEY_LEFT: camera.keyboard(LEFT, delta_time); break;
-		case GLUT_KEY_RIGHT: camera.keyboard(RIGHT, delta_time); break;
-		case GLUT_KEY_UP: camera.keyboard(UP, delta_time); break;
-		case GLUT_KEY_DOWN: camera.keyboard(DOWN, delta_time); break;
+		case GLUT_KEY_LEFT: camera.keyboard(LEFT); break;
+		case GLUT_KEY_RIGHT: camera.keyboard(RIGHT); break;
+		case GLUT_KEY_UP: camera.keyboard(UP); break;
+		case GLUT_KEY_DOWN: camera.keyboard(DOWN); break;
 	}
 }
 
@@ -231,7 +237,6 @@ void mouse_motion(int mousex, int mousey)
 void mouse_wheel(int button, int dir, int x, int y)
 {
 	camera.mouse_scroll(dir);
-	glutPostRedisplay();
 }
 
 // A function that handles GLUI mouse click.
@@ -239,7 +244,7 @@ void glui_click(int control)
 {
 	if (control == 0) // UPDATE SPHERE
 	{
-		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution);
+		spheres[0].reset(sphere_x, sphere_y, sphere_z, restitution, velocity);
 	}
 	if (control == 1) // QUIT
 	{
@@ -276,8 +281,11 @@ int main(int argc, char** argv) {
 	GLUI_EditText *y_edittext = new GLUI_EditText(glui, "Y: ", &sphere_y);
 	GLUI_EditText *z_edittext = new GLUI_EditText(glui, "Z: ", &sphere_z);
 	GLUI_EditText *surface_edittext = new GLUI_EditText(glui, "Resitution: ", &restitution);
-	new GLUI_Button(glui, "Update Sphere", 0, glui_click);
+	GLUI_EditText *air_density_edittext = new GLUI_EditText(glui, "Air Density: ", &air_density);
+	GLUI_EditText *drag_coeff_edittext = new GLUI_EditText(glui, "Drag Coefficient: ", &drag_coeff);
+	GLUI_EditText *velocity_edittext = new GLUI_EditText(glui, "velocity: ", &velocity);
 	GLUI_EditText *fps_edittext = new GLUI_EditText(glui, "FPS: ", &FPS);
+	new GLUI_Button(glui, "Update Sphere", 0, glui_click);
 	new GLUI_Button(glui, "Quit", 1, glui_click);
 
 	glui->hide();
